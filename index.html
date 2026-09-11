@@ -1,56 +1,1157 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <meta name="description" content="siber 8 is a cutting-edge tecnology">
+<html lang="id">
 
-    <title>Pemantauan Siswa Siber 8</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Negara Memanggilmu</title>
+
+
+    <style>
+
+        /* =========================
+           DASAR WEBSITE
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #10150c;
+            color: white;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(10, 15, 7, 0.95);
+
+            z-index: 1000;
+
+            border-bottom: 1px solid #4b562f;
+        }
+
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+
+        .logo span {
+            color: #d4b24c;
+        }
+
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+
+        nav a:hover {
+            color: #d4b24c;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 100px 20px 50px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        /* GAMBAR BACKGROUND */
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    rgba(10, 18, 7, 0.72),
+                    rgba(10, 18, 7, 0.92)
+                ),
+                url("assets/militer.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            z-index: -2;
+        }
+
+
+        /* GARIS DEKORASI */
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 30px;
+
+            border: 1px solid
+                    rgba(212, 178, 76, 0.35);
+
+            z-index: -1;
+        }
+
+
+        .hero-content {
+
+            max-width: 900px;
+
+            animation: muncul 1.5s ease;
+        }
+
+
+        @keyframes muncul {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        .badge {
+
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            border: 1px solid #d4b24c;
+
+            color: #d4b24c;
+
+            border-radius: 30px;
+
+            margin-bottom: 20px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(42px, 7vw, 75px);
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 span {
+
+            color: #d4b24c;
+        }
+
+
+        .hero p {
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            color: #ddd;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            margin: 5px;
+
+            border-radius: 5px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            background: #d4b24c;
+
+            color: #111;
+
+            transition: 0.3s;
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-4px);
+
+            background: white;
+        }
+
+
+        .btn-outline {
+
+            background: transparent;
+
+            border: 1px solid white;
+
+            color: white;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+
+            padding: 80px 8%;
+        }
+
+
+        .judul {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        .judul h2 {
+
+            font-size: 36px;
+
+            color: #d4b24c;
+
+            margin-bottom: 10px;
+        }
+
+
+        .judul p {
+
+            color: #aaa;
+        }
+
+
+        /* =========================
+           MOTIVASI
+        ========================= */
+
+        .motivasi {
+
+            background:
+                linear-gradient(
+                    rgba(15, 25, 9, 0.92),
+                    rgba(15, 25, 9, 0.92)
+                ),
+                url("assets/latihan.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            text-align: center;
+        }
+
+
+        .motivasi h2 {
+
+            font-size: 42px;
+
+            color: #d4b24c;
+
+            margin-bottom: 20px;
+        }
+
+
+        .motivasi p {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            line-height: 1.9;
+
+            font-size: 18px;
+
+            color: #eee;
+        }
+
+
+        /* =========================
+           VIDEO
+        ========================= */
+
+        .video-section {
+
+            background: #080b06;
+        }
+
+
+        .video-box {
+
+            max-width: 950px;
+
+            margin: auto;
+
+            border: 2px solid #3c462a;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,0.6);
+        }
+
+
+        .video-box video {
+
+            width: 100%;
+
+            display: block;
+        }
+
+
+        /* =========================
+           KARTU
+        ========================= */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 25px;
+        }
+
+
+        .card {
+
+            background: #1a2113;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            border: 1px solid #303b22;
+
+            transition: 0.3s;
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: #d4b24c;
+        }
+
+
+        .icon {
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .card h3 {
+
+            color: #d4b24c;
+
+            margin-bottom: 12px;
+        }
+
+
+        .card p {
+
+            color: #aaa;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           GALERI
+        ========================= */
+
+        .galeri {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+        }
+
+
+        .foto {
+
+            height: 280px;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            position: relative;
+        }
+
+
+        .foto img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+
+        .foto:hover img {
+
+            transform: scale(1.1);
+        }
+
+
+        .caption {
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 0;
+
+            right: 0;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,0.9)
+                );
+        }
+
+
+        .caption h3 {
+
+            color: white;
+        }
+
+
+        /* =========================
+           PERSYARATAN
+        ========================= */
+
+        .persyaratan {
+
+            background: #151b0f;
+        }
+
+
+        .persyaratan ul {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            list-style: none;
+        }
+
+
+        .persyaratan li {
+
+            background: #202819;
+
+            margin-bottom: 10px;
+
+            padding: 17px;
+
+            border-left: 4px solid #d4b24c;
+
+            border-radius: 4px;
+
+            color: #ddd;
+        }
+
+
+        .persyaratan li::before {
+
+            content: "✓";
+
+            color: #d4b24c;
+
+            font-weight: bold;
+
+            margin-right: 12px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+
+            text-align: center;
+
+            padding: 100px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(10,18,7,0.88),
+                    rgba(10,18,7,0.94)
+                ),
+                url("assets/upacara.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        .cta h2 {
+
+            font-size: 50px;
+
+            color: #d4b24c;
+
+            margin-bottom: 15px;
+        }
+
+
+        .cta p {
+
+            font-size: 19px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #060805;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #777;
+
+            line-height: 1.8;
+        }
+
+
+        footer span {
+
+            color: #d4b24c;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width: 768px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+
+            nav a {
+
+                margin: 0 5px;
+
+                font-size: 11px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 40px;
+            }
+
+
+            .hero p {
+
+                font-size: 16px;
+            }
+
+
+            .cta h2 {
+
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
 
-    <header>
-        <img 
-        src="c:\Users\Rezah\Pictures\images.jpg" 
-        alt="siber 8 Logo" 
-        width= "1000" ; height: 100px; object-fit: cover;>
 
-    </header>
+<!-- =================================
+     NAVBAR
+================================= -->
 
-    <h1> PERINGATAN MELALUI LETUSAN GUNUNG KRAKATAU </h1>
-    <h2> Mitigasi Bencana Terhadap peristiwa Bencana Yang Mungkin Terjadi </h2> 
+<header>
 
-  
-</body>
-        <div> **Mitigasi Bencana Gunung Meletus**
+    <div class="logo">
 
-<div class="Narasi-bencana">
+        TNI-AD
+        <span>INDONESIA</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#beranda">
+            Beranda
+        </a>
+
+        <a href="#motivasi">
+            Motivasi
+        </a>
+
+        <a href="#video">
+            Video
+        </a>
+
+        <a href="#galeri">
+            Galeri
+        </a>
+
+        <a href="#persyaratan">
+            Persyaratan
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =================================
+     HERO
+================================= -->
+
+<section
+    class="hero"
+    id="beranda">
+
+
+    <div class="hero-content">
+
+
+        <div class="badge">
+
+            🇮🇩 PENGABDIAN UNTUK NEGERI
+
+        </div>
+
+
+        <h1>
+
+            <span class="negara">
+                NEGARA
+            </span>
+
+            MEMANGGILMU
+
+        </h1>
+
+
+        <p>
+
+            Wujudkan semangat pengabdian
+            kepada bangsa dan negara.
+
+            Persiapkan dirimu untuk mengikuti
+            proses rekrutmen prajurit TNI-AD
+            melalui jalur resmi.
+
+        </p>
+
+
+        <a
+            href="#persyaratan"
+            class="btn">
+
+            LIHAT PERSYARATAN
+
+        </a>
+
+
+        <a
+            href="#video"
+            class="btn btn-outline">
+
+            ▶ LIHAT VIDEO
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     MOTIVASI
+================================= -->
+
+<section
+    class="motivasi"
+    id="motivasi">
+
+
+    <h2>
+        JADILAH BAGIAN DARI PENGABDIAN
+    </h2>
+
+
     <p>
-        Gunung meletus merupakan bencana alam yang dapat menimbulkan abu vulkanik, lava, awan panas, dan lahar. Karena itu, kita perlu mengetahui langkah-langkah yang harus dilakukan agar risiko terhadap masyarakat dapat dikurangi.
-Sebelum terjadi erupsi, masyarakat harus mengetahui kondisi gunung, mengenali wilayah yang rawan, serta mengetahui jalur evakuasi dan tempat pengungsian. Kita juga perlu menyiapkan tas darurat yang berisi makanan, air, masker, obat-obatan, senter, dan kebutuhan penting lainnya.
-Ketika gunung mulai erupsi, masyarakat harus tetap tenang dan mengikuti arahan dari petugas. Jika ada perintah evakuasi, segera menuju tempat yang aman melalui jalur yang telah ditentukan. Hindari daerah sekitar kawah, lembah, dan aliran sungai karena dapat menjadi jalur awan panas atau lahar.
-Setelah erupsi, jangan langsung kembali ke rumah sebelum ada pernyataan bahwa kondisi sudah aman. Masyarakat juga harus tetap waspada terhadap abu vulkanik dan lahar hujan, terutama ketika terjadi hujan deras.
-Dengan mengetahui risiko, mempersiapkan diri, mengikuti peringatan dini, dan melakukan evakuasi tepat waktu, dampak bencana gunung meletus dapat dikurangi.
+
+        Menjadi prajurit TNI-AD membutuhkan
+        disiplin, integritas, ketangguhan,
+        tanggung jawab dan semangat
+        pengabdian. Persiapkan kemampuan
+        fisik dan mental serta ikuti seluruh
+        proses sesuai ketentuan resmi.
+
     </p>
-    Ketika gunung mulai erupsi, masyarakat harus tetap tenang dan mengikuti arahan
-    dari petugas. Jika ada perintah evakuasi, segera menuju tempat yang aman melalui
-    jalur yang telah ditentukan. Hindari daerah sekitar kawah, lembah, dan aliran
-    sungai karena dapat menjadi jalur awan panas atau lahar.
-     </p>
-        Setelah erupsi, jangan langsung kembali ke rumah sebelum ada pernyataan bahwa
-        kondisi sudah aman. Masyarakat juga harus tetap waspada terhadap abu vulkanik
-        dan lahar hujan, terutama ketika terjadi hujan deras.
 
-    </p>   
-</div> 
-
-<style>
-    .mitigasi bencana gunung meletus { max-width: 900px; margin: 30px auto; padding: 25px; font-family: Arial, sans-serif; font-size: 17px; line-height: 1.8; text-align: justify}
-
-
-</style>
+</section>
 
 
 
+<!-- =================================
+     VIDEO
+================================= -->
+
+<section
+    class="video-section"
+    id="video">
+
+
+    <div class="judul">
+
+        <h2>
+            VIDEO PENGABDIAN
+        </h2>
+
+        <p>
+            Visualisasi kegiatan dan semangat
+            pengabdian.
+        </p>
+
+    </div>
+
+
+    <div class="video-box">
+
+        <video
+            controls
+            poster="assets/militer.jpg">
+
+            <source
+                src="assets/video-tni.mp4"
+                type="video/mp4">
+
+            Browser tidak mendukung video.
+
+        </video>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     NILAI
+================================= -->
+
+<section>
+
+
+    <div class="judul">
+
+        <h2>
+            NILAI YANG HARUS DIMILIKI
+        </h2>
+
+        <p>
+            Persiapkan karakter sebelum mengikuti
+            proses seleksi.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">
+                🇮🇩
+            </div>
+
+            <h3>
+                Pengabdian
+            </h3>
+
+            <p>
+                Memiliki semangat untuk
+                memberikan kontribusi bagi
+                bangsa dan negara.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎖️
+            </div>
+
+            <h3>
+                Disiplin
+            </h3>
+
+            <p>
+                Membentuk karakter disiplin,
+                tanggung jawab dan kepemimpinan.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                💪
+            </div>
+
+            <h3>
+                Ketangguhan
+            </h3>
+
+            <p>
+                Mempersiapkan kemampuan fisik
+                dan mental menghadapi tantangan.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🤝
+            </div>
+
+            <h3>
+                Solidaritas
+            </h3>
+
+            <p>
+                Membangun kerja sama dan
+                kebersamaan dalam pengabdian.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     GALERI
+================================= -->
+
+<section id="galeri">
+
+
+    <div class="judul">
+
+        <h2>
+            GALERI
+        </h2>
+
+        <p>
+            Dokumentasi visual kegiatan.
+        </p>
+
+    </div>
+
+
+    <div class="galeri">
+
+
+        <div class="foto">
+
+            <img
+                src="assets/militer.jpg"
+                alt="Kegiatan militer">
+
+            <div class="caption">
+
+                <h3>
+                    Semangat Pengabdian
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="foto">
+
+            <img
+                src="assets/latihan.jpg"
+                alt="Latihan">
+
+            <div class="caption">
+
+                <h3>
+                    Latihan dan Disiplin
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="foto">
+
+            <img
+                src="assets/upacara.jpg"
+                alt="Upacara">
+
+            <div class="caption">
+
+                <h3>
+                    Pengabdian untuk Negeri
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     PERSYARATAN
+================================= -->
+
+<section
+    class="persyaratan"
+    id="persyaratan">
+
+
+    <div class="judul">
+
+        <h2>
+            PERSYARATAN UMUM
+        </h2>
+
+        <p>
+            Template informasi — sesuaikan
+            dengan ketentuan resmi terbaru.
+        </p>
+
+    </div>
+
+
+    <ul>
+
+        <li>
+            Warga Negara Indonesia.
+        </li>
+
+        <li>
+            Memenuhi ketentuan usia sesuai
+            jalur penerimaan.
+        </li>
+
+        <li>
+            Memenuhi persyaratan pendidikan
+            sesuai ketentuan.
+        </li>
+
+        <li>
+            Memenuhi ketentuan kesehatan.
+        </li>
+
+        <li>
+            Melengkapi dokumen administrasi.
+        </li>
+
+        <li>
+            Mengikuti seluruh tahapan seleksi
+            sesuai ketentuan resmi.
+        </li>
+
+    </ul>
+
+</section>
+
+
+
+<!-- =================================
+     CTA
+================================= -->
+
+<section class="cta">
+
+
+    <h2>
+        SIAP MENGABDI?
+    </h2>
+
+
+    <p>
+
+        Persiapkan dirimu.
+        Tingkatkan disiplin.
+        Jaga integritas.
+
+    </p>
+
+
+    <a
+        href="https://rekrutmen-tni.mil.id/"
+        target="_blank"
+        class="btn">
+
+        PORTAL REKRUTMEN RESMI
+
+    </a>
+
+</section>
+
+
+
+<!-- =================================
+     FOOTER
+================================= -->
+
+<footer>
+
+    <p>
+
+        © 2026
+        <span>
+            Template Website Rekrutmen TNI-AD
+        </span>
+
+    </p>
+
+    <p>
+
+        Gunakan informasi resmi sebagai
+        acuan pendaftaran.
+
+    </p>
+
+</footer>
+
+
+</body>
 
 </html>
